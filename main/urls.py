@@ -18,7 +18,7 @@ from django.conf.urls import url
 from django.contrib import admin
 
 urlpatterns = [
-	url(r'^test/(\d+)/(\d+)/$', 'reim_pdf.views.index', name='index'),
+	url(r'^test/([AB][0-9])/$', 'reim_pdf.views.index', name='index'),
 	url(r'^html/(\d+)/(\d+)/$', 'reim_pdf.views.html', name='html'),
     url(r'^admin/', admin.site.urls),
 ]
