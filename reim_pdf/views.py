@@ -29,15 +29,20 @@ def render_to_pdf(template_src, context_dict):
     return HttpResponse('We had some errors<pre>%s</pre>' % escape(html))
 def index(request, a):
     #Retrieve data or whatever you need
-    if a == 'A4':
-        size = 40
-    else:
-        size = 60
+    if a == 'B5':
+        size = {'content_width':649, 'content_height':314,'content_top':135,'footer_top':462,'form_left':392}
+        page_size = a + ' landscape'
+    elif a == 'A5':
+        size = {'content_width':537, 'content_height':235,'content_top':135,'footer_top':366,'form_left':281}
+        page_size = a + ' landscape'
+    else :
+        page_size = a + ' portrait'
+        size = {'content_width':537, 'content_height':637,'content_top':155,'footer_top':802,'form_left':281}
     url = fetch_resources(r'/reim_pdf/static/')
     return render_to_pdf(
             'test.html',
             {
-                'pagesize': a,
+                'pagesize': page_size,
                 'url':url,
                 'size':size
             }

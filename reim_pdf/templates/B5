@@ -11,7 +11,7 @@
             }
             @page {
 
-                size: {{ pagesize }} ;
+                size: {{ pagesize }};
                 @frame header {
                     -pdf-frame-content: headerContent;
                     left: 30pt;
@@ -36,35 +36,42 @@
                     height: 50pt;
 
                 }
+
                 @frame header {
                     -pdf-frame-content: headerForm;
-                    left: {{size.form_left}}pt;
+                    left: 392pt;
                     width: 286pt;
                     top: 30pt;
                     height: 100pt;
+                }
 
-                }
+
+
                 @frame content_frame {
-                    width: {{size.content_width}}pt;
-                    height: {{size.content_height}}pt;
+                    width: 649pt;
+                    height:314pt;
                     left: 30pt;
-                    top: {{size.content_top}}pt;
-                    
+                    top: {{size}}pt;
                 }
+
+
+
+
                 @frame footer {
                     -pdf-frame-content: footerContent;
                     left: 30pt;
-                    width: {{size.content_width}}pt;
-                    top: {{size.footer_top}}pt;
+                    width: 649pt;
+                    top: 462pt;
                     height: 20pt;
                 }
                 @frame footer {
                     -pdf-frame-content: footerContent2;
                     left: 30pt;
-                    width: {{size.content_width}}pt;
-                    top: {{size.footer_top}}pt;
+                    width: 649pt;
+                    top: 462pt;
                     height: 20pt;
                 }
+
             }
             @font-face { 
                 font-family: sis;
